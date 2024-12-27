@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DetectTrandsform : MonoBehaviour
+public class DetectTransform : MonoBehaviour
 {
     public GameObject trackedObject;
     private Vector3 lastPosition;
@@ -11,10 +11,11 @@ public class DetectTrandsform : MonoBehaviour
 
     [SerializeField] private float startRotation;
     [SerializeField] private float endRotation;
-    [SerializeField] public GameObject item1;
-    [SerializeField] public GameObject item2;
-    [SerializeField] public GameObject item3;
-    //[SerializeField] public GameObject item4;
+
+    // Reference to Puzzle1Check script
+    public Puzzle1Check puzzleChecker;
+
+    private bool isCorrectRotation = false;
 
     // Start is called before the first frame update
     void Start()
@@ -32,19 +33,28 @@ public class DetectTrandsform : MonoBehaviour
 
     void OnTransformChanged()
     {
-        if (trackedObject.transform.position != lastPosition || trackedObject.transform.rotation != lastRotation || trackedObject.transform.localScale != lastScale)
-        {
-            Debug.Log("Transform has changed!");
-            // Perform some action in response to the change
-        }
-
         // Convert rotation to Euler angles to check the Z rotation in degrees between 2 values
         float zRotation = trackedObject.transform.eulerAngles.z;
-        if (zRotation >= startRotation && zRotation <= endRotation)
+
+        // Normalize rotation to ensure it's within 0-360
+        //zRotation = (zRotation + 360) % 360;
+
+        // Check if rotation is within the correct range
+        isCorrectRotation = (zRotation >= startRotation && zRotation <= endRotation);
+
+        // Notify the Puzzle1Check script of the rotation status
+        if (puzzleChecker != null)
         {
-            Debug.Log("Z rotation is between 40 and 50 degrees");
+            puzzleChecker.UpdateRotationStatus(this.gameObject, isCorrectRotation);
         }
 
+        // Debug output
+        if (isCorrectRotation)
+        {
+            Debug.Log($"{gameObject.name} is correctly rotated.");
+        }
+
+        // Update previous transform states
         lastPosition = trackedObject.transform.position;
         lastRotation = trackedObject.transform.rotation;
         lastScale = trackedObject.transform.localScale;

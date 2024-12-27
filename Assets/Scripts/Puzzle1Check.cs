@@ -1,16 +1,39 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Puzzle1Check : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private Dictionary<GameObject, bool> rotationStatuses = new Dictionary<GameObject, bool>();
+
+    public void UpdateRotationStatus(GameObject obj, bool isCorrect)
     {
-        
+        // Update the rotation status of the given object
+        if (rotationStatuses.ContainsKey(obj))
+        {
+            rotationStatuses[obj] = isCorrect;
+        }
+        else
+        {
+            rotationStatuses.Add(obj, isCorrect);
+        }
+
+        // Check if all objects are correctly rotated
+        CheckPuzzleCompletion();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void CheckPuzzleCompletion()
     {
-        
+        foreach (var status in rotationStatuses.Values)
+        {
+            if (!status)
+            {
+                Debug.Log("Puzzle not solved yet.");
+                return;
+            }
+        }
+
+        // If all objects are correctly rotated
+        Debug.Log("Puzzle solved!");
     }
 }

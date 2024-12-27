@@ -2666,7 +2666,7 @@ Transform:
   m_GameObject: {fileID: 216841573}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.46}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2706,8 +2706,8 @@ Light:
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
-  m_Range: 10
+  m_Intensity: 50
+  m_Range: 0.75
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -3536,12 +3536,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 067ca1d11ca79544ea3604efff0c77de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trackedObject: {fileID: 0}
+  trackedObject: {fileID: 279019442}
   startRotation: 90
   endRotation: 100
-  item1: {fileID: 0}
-  item2: {fileID: 0}
-  item3: {fileID: 0}
+  puzzleChecker: {fileID: 468897716}
 --- !u!1 &295138101
 GameObject:
   m_ObjectHideFlags: 0
@@ -5524,15 +5522,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 468897714}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 067ca1d11ca79544ea3604efff0c77de, type: 3}
+  m_Script: {fileID: 11500000, guid: 9bf968c64fd7a5848b58b854efc392d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trackedObject: {fileID: 0}
-  startRotation: 0
-  endRotation: 0
-  item1: {fileID: 488877387}
-  item2: {fileID: 279019442}
-  item3: {fileID: 2035282539}
 --- !u!1 &471479206
 GameObject:
   m_ObjectHideFlags: 0
@@ -6091,9 +6083,7 @@ MonoBehaviour:
   trackedObject: {fileID: 488877387}
   startRotation: 40
   endRotation: 50
-  item1: {fileID: 0}
-  item2: {fileID: 0}
-  item3: {fileID: 0}
+  puzzleChecker: {fileID: 468897716}
 --- !u!1 &493944547
 GameObject:
   m_ObjectHideFlags: 0
@@ -18944,7 +18934,7 @@ Transform:
   m_GameObject: {fileID: 1564303798}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.49}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18984,8 +18974,8 @@ Light:
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 0.39513552, g: 0.09024553, b: 0.6377357, a: 1}
-  m_Intensity: 1
-  m_Range: 10
+  m_Intensity: 75
+  m_Range: 1
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -23791,12 +23781,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 067ca1d11ca79544ea3604efff0c77de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trackedObject: {fileID: 0}
+  trackedObject: {fileID: 2035282539}
   startRotation: 75
   endRotation: 85
-  item1: {fileID: 0}
-  item2: {fileID: 0}
-  item3: {fileID: 0}
+  puzzleChecker: {fileID: 468897716}
 --- !u!1 &2046629158
 GameObject:
   m_ObjectHideFlags: 0
@@ -23859,7 +23847,7 @@ Transform:
   m_GameObject: {fileID: 2049837113}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.94}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -23899,8 +23887,8 @@ Light:
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 0.7735849, g: 0.37503394, b: 0.04524738, a: 1}
-  m_Intensity: 1
-  m_Range: 10
+  m_Intensity: 50
+  m_Range: 1
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
