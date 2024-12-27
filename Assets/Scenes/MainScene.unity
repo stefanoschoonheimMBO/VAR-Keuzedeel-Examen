@@ -3427,6 +3427,7 @@ GameObject:
   - component: {fileID: 279019446}
   - component: {fileID: 279019445}
   - component: {fileID: 279019444}
+  - component: {fileID: 279019447}
   m_Layer: 0
   m_Name: Item2
   m_TagString: Untagged
@@ -3523,6 +3524,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 279019442}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &279019447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 279019442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 067ca1d11ca79544ea3604efff0c77de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trackedObject: {fileID: 0}
+  startRotation: 90
+  endRotation: 100
+  item1: {fileID: 0}
+  item2: {fileID: 0}
+  item3: {fileID: 0}
 --- !u!1 &295138101
 GameObject:
   m_ObjectHideFlags: 0
@@ -5469,6 +5488,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 468897715}
+  - component: {fileID: 468897716}
   m_Layer: 0
   m_Name: RotationPuzzle
   m_TagString: Untagged
@@ -5495,6 +5515,24 @@ Transform:
   - {fileID: 295138102}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &468897716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 468897714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 067ca1d11ca79544ea3604efff0c77de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trackedObject: {fileID: 0}
+  startRotation: 0
+  endRotation: 0
+  item1: {fileID: 488877387}
+  item2: {fileID: 279019442}
+  item3: {fileID: 2035282539}
 --- !u!1 &471479206
 GameObject:
   m_ObjectHideFlags: 0
@@ -5941,6 +5979,7 @@ GameObject:
   - component: {fileID: 488877391}
   - component: {fileID: 488877390}
   - component: {fileID: 488877389}
+  - component: {fileID: 488877392}
   m_Layer: 0
   m_Name: Item1
   m_TagString: Untagged
@@ -6037,6 +6076,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 488877387}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &488877392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488877387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 067ca1d11ca79544ea3604efff0c77de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trackedObject: {fileID: 488877387}
+  startRotation: 40
+  endRotation: 50
+  item1: {fileID: 0}
+  item2: {fileID: 0}
+  item3: {fileID: 0}
 --- !u!1 &493944547
 GameObject:
   m_ObjectHideFlags: 0
@@ -23625,6 +23682,7 @@ GameObject:
   - component: {fileID: 2035282543}
   - component: {fileID: 2035282542}
   - component: {fileID: 2035282541}
+  - component: {fileID: 2035282544}
   m_Layer: 0
   m_Name: Item3
   m_TagString: Untagged
@@ -23721,6 +23779,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2035282539}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2035282544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2035282539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 067ca1d11ca79544ea3604efff0c77de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trackedObject: {fileID: 0}
+  startRotation: 75
+  endRotation: 85
+  item1: {fileID: 0}
+  item2: {fileID: 0}
+  item3: {fileID: 0}
 --- !u!1 &2046629158
 GameObject:
   m_ObjectHideFlags: 0
