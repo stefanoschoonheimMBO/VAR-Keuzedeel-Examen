@@ -1,10 +1,12 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Puzzle1Check : MonoBehaviour
 {
     private Dictionary<GameObject, bool> rotationStatuses = new Dictionary<GameObject, bool>();
+
+    // Reference to the LightController
+    public LightController lightController;
 
     public void UpdateRotationStatus(GameObject obj, bool isCorrect)
     {
@@ -29,11 +31,20 @@ public class Puzzle1Check : MonoBehaviour
             if (!status)
             {
                 Debug.Log("Puzzle not solved yet.");
+
+                lightController.TurnOffLight();
+
                 return;
             }
         }
 
         // If all objects are correctly rotated
         Debug.Log("Puzzle solved!");
+
+        // Notify the LightController
+        if (lightController != null)
+        {
+            lightController.TurnOnLight();
+        }
     }
 }

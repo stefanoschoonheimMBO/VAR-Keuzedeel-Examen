@@ -33,14 +33,14 @@ public class DetectTransform : MonoBehaviour
 
     void OnTransformChanged()
     {
-        // Convert rotation to Euler angles to check the Z rotation in degrees between 2 values
-        float zRotation = trackedObject.transform.eulerAngles.z;
+        // Convert rotation to Euler angles to check the Y rotation in degrees between 2 values
+        float yRotation = trackedObject.transform.eulerAngles.y;
 
         // Normalize rotation to ensure it's within 0-360
         //zRotation = (zRotation + 360) % 360;
 
         // Check if rotation is within the correct range
-        isCorrectRotation = (zRotation >= startRotation && zRotation <= endRotation);
+        isCorrectRotation = (yRotation >= startRotation && yRotation <= endRotation);
 
         // Notify the Puzzle1Check script of the rotation status
         if (puzzleChecker != null)
