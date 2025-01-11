@@ -15,7 +15,11 @@ public class DetectTransform : MonoBehaviour
     // Reference to Puzzle1Check script
     public Puzzle1Check puzzleChecker;
 
+    // Reference to AudioSource
+    private AudioSource audioSource;
+
     private bool isCorrectRotation = false;
+    private bool hasPlayedSound = false; // To avoid replaying sound repeatedly
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +27,9 @@ public class DetectTransform : MonoBehaviour
         lastPosition = trackedObject.transform.position;
         lastRotation = trackedObject.transform.rotation;
         lastScale = trackedObject.transform.localScale;
+
+        // Get the AudioSource component
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -48,10 +55,21 @@ public class DetectTransform : MonoBehaviour
             puzzleChecker.UpdateRotationStatus(this.gameObject, isCorrectRotation);
         }
 
-        // Debug output
-        if (isCorrectRotation)
+        // Play sound if correctly rotated and sound hasn't been played
+        if (isCorrectRotation && !hasPlayedSound)
         {
             Debug.Log($"{gameObject.name} is correctly rotated.");
+
+            if (audioSource != null)
+            {
+                audioSource.Play();
+                hasPlayedSound = true;
+            }
+        }
+        else if (!isCorrectRotation)
+        {
+            // Reset sound playback if rotation becomes incorrect
+            hasPlayedSound = false;
         }
 
         // Update previous transform states
