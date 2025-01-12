@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class DetectTransform : MonoBehaviour
 {
+    // References for objects and rotations
     public GameObject trackedObject;
     private Vector3 lastPosition;
     private Quaternion lastRotation;
     private Vector3 lastScale;
 
+    // Customizable start and end rotation to track
     [SerializeField] private float startRotation;
     [SerializeField] private float endRotation;
+
+    // Bool to check if rotation is correct based on start- / endrotation
+    private bool isCorrectRotation = false;
 
     // Reference to Puzzle1Check script
     public Puzzle1Check puzzleChecker;
@@ -18,8 +23,8 @@ public class DetectTransform : MonoBehaviour
     // Reference to AudioSource
     private AudioSource audioSource;
 
-    private bool isCorrectRotation = false;
-    private bool hasPlayedSound = false; // To avoid replaying sound repeatedly
+    // To avoid replaying sound repeatedly
+    private bool hasPlayedSound = false;
 
     // Start is called before the first frame update
     void Start()
@@ -35,18 +40,19 @@ public class DetectTransform : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Run function
         OnTransformChanged();
     }
 
     void OnTransformChanged()
     {
-        // Convert rotation to Euler angles to check the Y rotation in degrees between 2 values
+        // Convert rotation to Euler angles to based on the Y rotation
         float yRotation = trackedObject.transform.eulerAngles.y;
 
         // Normalize rotation to ensure it's within 0-360
         //zRotation = (zRotation + 360) % 360;
 
-        // Check if rotation is within the correct range
+        // Check if the rotation is within the correct range
         isCorrectRotation = (yRotation >= startRotation && yRotation <= endRotation);
 
         // Notify the Puzzle1Check script of the rotation status
@@ -55,17 +61,19 @@ public class DetectTransform : MonoBehaviour
             puzzleChecker.UpdateRotationStatus(this.gameObject, isCorrectRotation);
         }
 
-        // Play sound if correctly rotated and sound hasn't been played
+        // Play sound if correctly rotated and sound hasn't been played yet
         if (isCorrectRotation && !hasPlayedSound)
         {
             Debug.Log($"{gameObject.name} is correctly rotated.");
 
+            // If audioSource exists, play sound
             if (audioSource != null)
             {
                 audioSource.Play();
                 hasPlayedSound = true;
             }
         }
+        // If the item is not in the correct rotation...
         else if (!isCorrectRotation)
         {
             // Reset sound playback if rotation becomes incorrect

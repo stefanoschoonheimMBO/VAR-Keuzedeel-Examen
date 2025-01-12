@@ -16,7 +16,7 @@ public class LightController : MonoBehaviour
         }
     }
 
-    // Method to turn on the light
+    // Function to turn on the light
     public void TurnOnLight()
     {
         if (puzzleLight != null)
@@ -26,6 +26,7 @@ public class LightController : MonoBehaviour
         }
     }
 
+    // Function to turn off the light
     public void TurnOffLight()
     {
         if (puzzleLight != null)
