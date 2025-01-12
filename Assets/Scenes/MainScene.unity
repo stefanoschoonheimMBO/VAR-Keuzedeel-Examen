@@ -21037,7 +21037,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec1c8697c7213a7489ca125b37619220, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  basicsocket: {fileID: 0}
+  sockets:
+  - {fileID: 956846434}
+  - {fileID: 1763215857}
+  - {fileID: 156900901}
+  - {fileID: 345135845}
+  - {fileID: 1432154746}
+  books:
+  - {fileID: 2116547654}
+  - {fileID: 1926940253}
+  - {fileID: 926527154}
+  - {fileID: 1652968774}
+  - {fileID: 1479474516}
 --- !u!1 &1624025054
 GameObject:
   m_ObjectHideFlags: 0
